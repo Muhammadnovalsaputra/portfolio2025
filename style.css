@@ -18,7 +18,17 @@ body, html {
     padding-left: 1.5rem; /* 24px */
     padding-right: 1.5rem; /* 24px */
 }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.container h3{
+    font-weight: 400;
+    font-size: 50px;
+    font-family: "Bungee Spice", sans-serif;
+}
 /* Sesuaikan padding untuk layar lebih besar */
 @media (min-width: 768px) {
     .container-content {
