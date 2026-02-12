@@ -3,20 +3,17 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Gunakan variabel CSS untuk warna agar mudah diubah */
-    --color-primary: #f6f7f9; /* Warna Biru Tua dari box1 */
-    --color-secondary: #190551; /* Warna Badge */
+    --color-primary: #f6f7f9; 
+    --color-secondary: #190551; 
     --bg-dark: rgb(14, 13, 60);
     --bg-light: rgb(33, 33, 58);
     background: linear-gradient(to right, var(--bg-dark), var(--bg-light));
     font-family: 'Roboto', sans-serif;
 }
 
-/* 1. Responsiveness & Layout Dasar */
 .container-content {
-    /* Gunakan padding relatif, lebih responsif daripada nilai tetap */
-    padding-left: 1.5rem; /* 24px */
-    padding-right: 1.5rem; /* 24px */
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
 }
 .container{
     display: flex;
@@ -29,30 +26,30 @@ body, html {
     font-size: 50px;
     font-family: "Bungee Spice", sans-serif;
 }
-/* Sesuaikan padding untuk layar lebih besar */
+
 @media (min-width: 768px) {
     .container-content {
-        padding-left: 4rem; /* 64px */
-        padding-right: 4rem; /* 64px */
+        padding-left: 4rem; 
+        padding-right: 4rem; 
     }
 }
 
 
-/* 2. Navigasi */
+
 .navbar {
     background: linear-gradient(to right, var(--bg-dark), var(--bg-light));
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Sedikit transparansi */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
 }
 
 .navbar .navbar-brand {
     color: var(--color-primary);
     font-weight: bold;
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem; 
 }
 
 .navbar ul li .nav-link {
     color: white;
-    padding: 0.5rem 1rem; /* Penyesuaian padding */
+    padding: 0.5rem 1rem; 
 }
 
 .navbar-toggler {
@@ -60,17 +57,17 @@ body, html {
 }
 
 .navbar-toggler-icon {
-    filter: invert(1); /* Membuat ikon burger terlihat putih */
+    filter: invert(1); 
 }
 
-/* 3. Badge (Skill Tags) */
+
 .badge {
     background-color: var(--color-secondary) !important;
     cursor: default;
-    font-size: 0.85rem; /* Ukuran yang lebih proporsional */
+    font-size: 0.85rem;
 }
 
-/* 4. Hero/About Section */
+
 .container-content .content .span {
     color: var(--color-primary);
 }
@@ -83,26 +80,26 @@ body, html {
 }
 
 .btn-primary:hover {
-    background-color: #3b177a; /* Warna lebih gelap saat hover */
+    background-color: #3b177a; 
 }
 
 .profile-card {
-    background-color: transparent !important; /* Hilangkan latar belakang kartu */
-    border: none !important; /* Hilangkan border kartu */
+    background-color: transparent !important; 
+    border: none !important; 
 }
 
 
-/* 5. Card (Pendidikan & Pengalaman) */
+
 .container-content .card {
     background-color: #1a132c;
     color: white;
 }
 
 .education-header {
-    min-height: auto; /* Hilangkan min-height, biarkan konten yang menentukan */
+    min-height: auto; 
 }
 
-/* 6. Judul dan Teks */
+
 .text-content h2, .text-content h3 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -111,17 +108,15 @@ body, html {
     font-size: 1.15rem;
 }
 
-/* 7. Image Hover Effect (Proyek) */
+
 .img-content {
     position: relative;
     width: 100%;
-    max-width: 450px; /* Lebar maksimum untuk perangkat yang lebih besar */
+    max-width: 450px; 
     margin-left: auto;
     margin-right: auto;
-    /* Menggunakan padding-bottom agar tinggi wadah adaptif, 
-       bukan padding-top, untuk menghindari margin aneh di atas */
     padding-bottom: 100%; 
-    height: 0; /* Penting untuk teknik rasio aspek */
+    height: 0; 
 }
 
 .box1, .box2 {
@@ -145,33 +140,33 @@ body, html {
 .box1 {
     background-color: transparent;
     border: 5px solid var(--color-primary);
-    transform: translate(15px, 15px); /* Geser ke KANAN BAWAH di posisi awal */
+    transform: translate(15px, 15px); 
     z-index: 10;
 }
 
 .box2 {
-    object-fit: cover; /* Gunakan cover agar gambar memenuhi area */
+    object-fit: cover; 
     z-index: 20;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     background-color: #4f5cad;
 }
 
-/* 8. Proyek - Menggunakan Flexbox untuk Penyelarasan Vertikal */
+
 .full-height-row {
     align-items: center; 
-    min-height: 50vh; /* Turunkan min-height agar tidak terlalu memanjang di desktop */
+    min-height: 50vh;
 }
 
-/* 9. Contact Section */
+
 .hero-section-contact {
     background-size: cover;
     background-position: center;
-    padding: 5rem 0; /* Padding responsif */
+    padding: 5rem 0; 
     border-radius: 10px;
     margin: 3rem 0;
     background-image: url('asset/contact.jpg');
     position: relative;
-    /* Overlay untuk membuat teks lebih terbaca */
+ 
 }
 .hero-section-contact::before {
     content: '';
@@ -180,7 +175,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Hitam transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
 }
 .hero-section-contact .hero-title {
@@ -222,7 +217,7 @@ body, html {
     background-color: #4b71a0 !important;
 }
 
-/* Override gaya ikon sosial media */
+
 .fs-3 a {
     color: white;
     transition: color 0.3s;
@@ -232,7 +227,7 @@ body, html {
     color: var(--color-primary);
 }
 
-/* Media Query untuk Mobile */
+
 @media (max-width: 767.98px) {
     .container-content {
         padding-left: 1rem;
@@ -247,25 +242,25 @@ body, html {
         font-size: 1.5rem;
     }
     
-    /* Atur ulang urutan kolom pada Hero Section untuk mobile */
+ 
     .row.align-items-center > .order-lg-1 {
         order: 0 !important;
     }
     .row.align-items-center > .order-lg-0 {
         order: 1 !important;
-        text-align: center; /* Teks tengah di mobile */
+        text-align: center; 
     }
 
-    /* Atur ulang urutan kolom pada Project Section untuk mobile (Gambar selalu di atas/bawah) */
+   
     .full-height-row .order-md-1 {
         order: 0 !important; 
     }
     .full-height-row .order-md-0 {
         order: 1 !important;
-        text-align: center; /* Teks tengah di mobile */
+        text-align: center; 
     }
 
     .img-content {
-        max-width: 300px; /* Batasi ukuran gambar proyek di mobile */
+        max-width: 300px; 
     }
 }
