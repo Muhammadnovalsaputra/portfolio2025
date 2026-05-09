@@ -577,6 +577,202 @@ section:not(:last-child)::after {
         font-size: 1.1rem;
     }
 }
+
+/* ================================================================
+   TABLET RESPONSIVE (769px - 1024px) 
+   Dibuat sejajar antara teks dan foto
+   ================================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .timeline-item {
+        display: flex;
+        flex-direction: row; /* Memastikan sejajar horizontal */
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 80px;
+        padding: 0 !important;
+    }
+
+    /* Mengatur urutan agar konsisten di Tablet: Konten - Dot - Foto */
+    .timeline-item.left {
+        flex-direction: row;
+        padding-right: 0;
+    }
+    
+    .timeline-item.right {
+        flex-direction: row-reverse; /* Foto di kiri, teks di kanan agar variasi */
+        padding-left: 0;
+    }
+
+    .timeline-content {
+        flex: 1;
+        text-align: right !important; /* Default untuk item kiri */
+        padding: 0;
+    }
+
+    .timeline-item.right .timeline-content {
+        text-align: left !important;
+    }
+
+    .photo-group {
+        width: 200px;
+        height: 150px;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        flex-shrink: 0;
+    }
+
+    .timeline-dot {
+        position: static; /* Menghilangkan posisi absolut agar ikut aliran flex */
+        transform: none;
+        margin: 0 10px;
+    }
+
+    .timeline-line {
+        display: none; /* Menghilangkan garis tengah jika dirasa terlalu penuh */
+    }
+    
+    .logo-group {
+        display: none; /* Sembunyikan logo agar ruang fokus ke teks & foto */
+    }
+}
+
+/* ================================================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   Tetap vertikal seperti gambar image_bcd4c1.png
+   ================================================================ */
+@media (max-width: 768px) {
+    .edu-timeline-layout {
+        padding: 20px 0 20px 20px;
+    }
+
+    .timeline-line {
+        display: block;
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        padding: 0 !important;
+    }
+
+    .timeline-dot {
+        left: -8px;
+        top: 10px;
+        position: absolute;
+    }
+
+    .timeline-content {
+        padding: 0 0 0 40px;
+        text-align: left !important;
+        order: 1;
+    }
+
+    .photo-group {
+        order: 2;
+        width: 180px;
+        height: 130px;
+        margin-left: 40px;
+        margin-top: 15px;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+    }
+    
+    .logo-group { display: none; }
+}
+
+/* ================================================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   Sesuai dengan referensi gambar image_bcd4c1.png
+   ================================================================ */
+@media (max-width: 768px) {
+    .logo-group { 
+        display: none; /* Logo disembunyikan di mobile agar bersih */
+    }
+
+    /* Padding kiri untuk memberi ruang pada garis timeline */
+    .edu-timeline-layout {
+        padding: 20px 0 20px 20px;
+    }
+
+    /* Garis timeline dipindah ke sisi kiri */
+    .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        padding: 0 !important;
+        position: relative;
+    }
+
+    /* Reset arah teks dan posisi flexbox */
+    .timeline-item.left, 
+    .timeline-item.right {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    /* Dot dipasang tepat di atas garis di sisi kiri */
+    .timeline-dot {
+        left: -8px; /* Setengah dari ukuran dot (16px) */
+        top: 10px;
+        transform: none;
+        position: absolute;
+    }
+
+    /* Konten teks ditarik ke kiri dengan margin dari garis */
+    .timeline-content {
+        padding: 0 0 0 35px;
+        text-align: left !important;
+        width: 100%;
+        order: 1; /* Teks muncul pertama */
+    }
+
+    .timeline-content h3 {
+        font-size: 1.15rem;
+        line-height: 1.3;
+    }
+
+    .timeline-content .year {
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    /* Foto dibuat overlap/melayang sesuai referensi gambar image_bcd4c1.png */
+    .photo-group {
+        order: 2; /* Foto muncul di bawah teks */
+        width: 160px;
+        height: 120px;
+        margin-left: 35px;
+        margin-top: 10px;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        z-index: 5;
+        /* Tambahkan rotasi sedikit agar artistik seperti di gambar */
+        transform: rotate(2deg);
+    }
+
+    /* Pastikan gambar di dalam group tetap penuh */
+    .edu-photo {
+        border-radius: 8px;
+    }
+
+    /* Perkecil overlay teks dekoratif */
+    .decorative-text {
+        font-size: 0.9rem;
+    }
+}
 /* ===== HERO ===== */
 #home { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-top:5rem; padding-bottom:4rem; }
 .hero-label { font-size:0.78rem; color:var(--accent); font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:1.2rem; opacity:0; animation:fadeUp 0.6s 0.1s forwards; }
