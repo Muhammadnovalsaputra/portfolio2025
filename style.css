@@ -511,28 +511,70 @@ section:not(:last-child)::after {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .logo-group { display: none; }
+.logo-group { 
+        display: none; 
+    }
 
-    .timeline-item.left,
-    .timeline-item.right {
-        padding: 0;
+    .edu-timeline-layout {
+        padding: 20px 0 20px 30px; /* Memberi ruang di kiri untuk garis */
+    }
+
+    /* Pindahkan garis ke sisi kiri */
+    .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
-        margin-left: 0;
+        margin-bottom: 60px; /* Jarak antar item lebih rapat di mobile */
+        padding: 0 !important;
     }
 
-    .timeline-content {
+    /* Reset padding untuk item kiri & kanan agar sejajar di kiri */
+    .timeline-item.left, 
+    .timeline-item.right {
+        justify-content: flex-start;
         text-align: left;
-        width: 100%;
     }
 
+    /* Posisi dot mengikuti garis di sebelah kiri */
     .timeline-dot {
-        left: 0;
-        top: 0;
+        left: -10px; /* Menyesuaikan posisi di atas garis */
+        top: 10px;
         transform: none;
-        position: relative;
-        margin-bottom: 12px;
+        position: absolute;
+    }
+
+    /* Konten teks ditarik ke kiri */
+    .timeline-content {
+        padding: 0 0 0 40px;
+        text-align: left !important;
+        width: 100%;
+        order: 1;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Mengatur foto agar melayang/overlap di sebelah kanan seperti di gambar */
+    .photo-group {
+        order: 2;
+        width: 180px; /* Perkecil ukuran foto di mobile */
+        height: 130px;
+        margin-left: 40px;
+        margin-top: 15px;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Overlay teks dekoratif diperkecil agar pas */
+    .decorative-text {
+        font-size: 1.1rem;
     }
 }
 /* ===== HERO ===== */
