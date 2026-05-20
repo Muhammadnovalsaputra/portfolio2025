@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad Noval Saputra — Portfolio</title>
+    <link rel="icon" type="image/png" href="asset/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,7 +19,7 @@
     <div class="cursor-ring" id="cursorRing"></div>
 
     <div class="astronaut-container" id="astronaut">
-    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Astronaut.png" width="100" alt="Astronaut">
+        <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Astronaut.png" width="100" alt="Astronaut">
     </div>
 
     <div class="bg-canvas">
@@ -36,33 +37,41 @@
             <div class="nav-brand">
                 <a href="#home" class="nav-logo">Portfolio</a>
                 <div class="nav-divider"></div>
-                <span class="open-badge">Open to Work</span>
+                <span class="open-badge" data-id="badge-open">Open to Work</span>
             </div>
+
+            <!-- LANGUAGE TOGGLE -->
+            <div class="lang-toggle-wrap" id="langToggle">
+                <button class="lang-btn active" data-lang="id" onclick="setLang('id')">ID</button>
+                <div class="lang-divider-line"></div>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            </div>
+
             <div class="nav-actions">
                 <a href="asset/cvnew.pdf" target="_blank" class="btn-primary-sm">
                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 15V3m0 12l-4-4m4 4l4-4M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg>
-                    Download CV
+                    <span data-id="btn-cv">Download CV</span>
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home"       class="nav-anchor active">Home</a></li>
-                <li><a href="#pendidikan" class="nav-anchor">Pendidikan</a></li>
-                <li><a href="#pengalaman" class="nav-anchor">Pengalaman</a></li>
-                <li><a href="#proyek"     class="nav-anchor">Proyek</a></li>
-                <li><a href="#sertifikat" class="nav-anchor">Sertifikat</a></li>
-                <li><a href="#kontak"     class="nav-anchor">Kontak</a></li>
+                <li><a href="#home"       class="nav-anchor active" data-id="nav-home">Home</a></li>
+                <li><a href="#pendidikan" class="nav-anchor" data-id="nav-edu">Pendidikan</a></li>
+                <li><a href="#pengalaman" class="nav-anchor" data-id="nav-exp">Pengalaman</a></li>
+                <li><a href="#proyek"     class="nav-anchor" data-id="nav-proj">Proyek</a></li>
+                <li><a href="#sertifikat" class="nav-anchor" data-id="nav-cert">Sertifikat</a></li>
+                <li><a href="#kontak"     class="nav-anchor" data-id="nav-contact">Kontak</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#home"       class="nav-anchor">Home</a>
-            <a href="#pendidikan" class="nav-anchor">Pendidikan</a>
-            <a href="#pengalaman" class="nav-anchor">Pengalaman</a>
-            <a href="#proyek"     class="nav-anchor">Proyek</a>
-            <a href="#sertifikat" class="nav-anchor">Sertifikat</a>
-            <a href="#kontak"     class="nav-anchor">Kontak</a>
+            <a href="#home"       class="nav-anchor" data-id="nav-home-m">Home</a>
+            <a href="#pendidikan" class="nav-anchor" data-id="nav-edu-m">Pendidikan</a>
+            <a href="#pengalaman" class="nav-anchor" data-id="nav-exp-m">Pengalaman</a>
+            <a href="#proyek"     class="nav-anchor" data-id="nav-proj-m">Proyek</a>
+            <a href="#sertifikat" class="nav-anchor" data-id="nav-cert-m">Sertifikat</a>
+            <a href="#kontak"     class="nav-anchor" data-id="nav-contact-m">Kontak</a>
         </div>
     </nav>
 
@@ -72,12 +81,11 @@
         <section id="home">
             <div class="hero-container">
                 <div class="hero-content">
-                    <div class="hero-label">👋 &nbsp;Halo, Selamat Datang</div>
+                    <div class="hero-label" data-id="hero-greeting">👋 &nbsp;Halo, Selamat Datang</div>
                     <h1 class="hero-title">MUHAMMAD<span>NOVAL</span></h1>
-                    <p class="hero-tagline" id="typewriter">Junior Programmer dengan semangat tinggi dalam Web Development dan Data Analysis.Memiliki keahlian dalam pemecahan 
-                    masalah,Microsoft Office, dan pengembangan Web. </p>
+                    <p class="hero-tagline" id="typewriter" data-id="hero-tagline">Junior Programmer dengan semangat tinggi dalam Web Development dan Data Analysis. Memiliki keahlian dalam pemecahan masalah, Microsoft Office, dan pengembangan Web.</p>
                     <div class="hero-actions">
-                        <a href="#kontak" class="btn-ghost">Hubungi Saya →</a>
+                        <a href="#kontak" class="btn-ghost" data-id="btn-contact">Hubungi Saya →</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -86,10 +94,10 @@
             </div>
 
             <div class="stat-row">
-                <div class="stat-item"><div class="num">3.30</div><div class="lbl">IPK Saat Ini</div></div>
-                <div class="stat-item"><div class="num">12+</div><div class="lbl">Proyek Selesai</div></div>
-                <div class="stat-item"><div class="num">3</div><div class="lbl">Pengalaman Kerja</div></div>
-                <div class="stat-item"><div class="num">9</div><div class="lbl">Sertifikat</div></div>
+                <div class="stat-item"><div class="num">3.30</div><div class="lbl" data-id="stat-gpa">IPK Saat Ini</div></div>
+                <div class="stat-item"><div class="num">12+</div><div class="lbl" data-id="stat-proj">Proyek Selesai</div></div>
+                <div class="stat-item"><div class="num">3</div><div class="lbl" data-id="stat-exp">Pengalaman Kerja</div></div>
+                <div class="stat-item"><div class="num">9</div><div class="lbl" data-id="stat-cert">Sertifikat</div></div>
             </div>
 
             <div class="social-links-row">
@@ -106,74 +114,71 @@
         <section id="pendidikan">
             <div class="section-container">
                 <div class="section-header reveal">
-                    <div class="section-label">Latar Belakang</div>
+                    <div class="section-label" data-id="edu-label">Latar Belakang</div>
                     <div class="section-title title-anim-wrap">
                         <div class="title-anim-row" data-delay="0">
-                            <span class="title-block-anim">EDUCATION </span>
+                            <span class="title-block-anim" data-id="edu-title">PENDIDIKAN</span>
                         </div>
                     </div>
-                    <p class="section-subtitle">Riwayat pendidikan</p>
+                    <p class="section-subtitle" data-id="edu-subtitle">Riwayat pendidikan</p>
                 </div>
 
                 <div class="edu-timeline-layout">
                     <div class="timeline-line"></div>
 
                     <!-- ITEM KIRI (Telkom University) -->
-                <div class="timeline-item reveal left">
-                    <!-- Logo dipindah ke paling kiri -->
-                    <div class="logo-group" id="logo-telkom">
-                        <div class="logo-magnetic-wrap">
-                            <img src="asset/logotelkom.png" alt="Logo Telkom University" class="edu-logo">
-                            <div class="logo-glow"></div>
+                    <div class="timeline-item reveal left">
+                        <div class="logo-group" id="logo-telkom">
+                            <div class="logo-magnetic-wrap">
+                                <img src="asset/logotelkom.png" alt="Logo Telkom University" class="edu-logo">
+                                <div class="logo-glow"></div>
+                            </div>
+                            <span class="logo-label">Telkom University</span>
                         </div>
-                        <span class="logo-label">Telkom University</span>
-                    </div>
 
-                    <div class="timeline-content">
-                        <div class="year">2022 — Sekarang</div>
-                        <h3>S1 Sistem Informasi</h3>
-                        <div class="inst">Telkom University Jakarta</div>
-                        <span class="detail">IPK: 3.30 · Web Development</span>
-                    </div>
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="photo-group">
-                        <img src="asset/telkomuniv.jpeg" alt="Telkom Univ" class="edu-photo photo-1">
-                        <div class="hover-overlay">
-                            <span class="decorative-text">Seminar Proposal</span>
+                        <div class="timeline-content">
+                            <div class="year" data-id="telkom-year">2022 — Sekarang</div>
+                            <h3 data-id="telkom-major">S1 Sistem Informasi</h3>
+                            <div class="inst" data-id="telkom-inst">Telkom University Jakarta</div>
+                            <span class="detail" data-id="telkom-detail">IPK: 3.30 · Web Development</span>
                         </div>
-                    </div>
-                </div>
 
-                <!-- ITEM KANAN (SMK Telkom) -->
-                <div class="timeline-item reveal right" style="transition-delay:.1s">
-                    <!-- Foto di paling kiri -->
-                    <div class="photo-group">
-                        <img src="asset/wisuda1.jpeg" alt="SMK Telkom" width="100" class="edu-photo photo-1">
-                        <div class="hover-overlay">
-                            <span class="decorative-text">Wisuda SMK Telkom</span>
+                        <div class="timeline-dot"></div>
+
+                        <div class="photo-group">
+                            <img src="asset/telkomuniv.jpeg" alt="Telkom Univ" class="edu-photo photo-1">
+                            <div class="hover-overlay">
+                                <span class="decorative-text" data-id="telkom-photo-label">Seminar Proposal</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-                        <div class="year">2019 — 2022</div>
-                        <h3>Rekayasa Perangkat Lunak</h3>
-                        <div class="inst">SMK Telkom Jakarta</div>
-                        <span class="detail">Nilai Rata-rata: 84.50</span>
-                    </div>
-
-                    <!-- Logo dipindah ke paling kanan -->
-                    <div class="logo-group" id="logo-smk">
-                        <div class="logo-magnetic-wrap">
-                            <img src="asset/logosmktelkom.png" alt="Logo SMK Telkom Jakarta" class="edu-logo">
-                            <div class="logo-glow"></div>
+                    <!-- ITEM KANAN (SMK Telkom) -->
+                    <div class="timeline-item reveal right" style="transition-delay:.1s">
+                        <div class="photo-group">
+                            <img src="asset/wisuda1.jpeg" alt="SMK Telkom" width="100" class="edu-photo photo-1">
+                            <div class="hover-overlay">
+                                <span class="decorative-text" data-id="smk-photo-label">Wisuda SMK Telkom</span>
+                            </div>
                         </div>
-                        <span class="logo-label">SMK Telkom Jakarta</span>
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <div class="year">2019 — 2022</div>
+                            <h3 data-id="smk-major">Rekayasa Perangkat Lunak</h3>
+                            <div class="inst" data-id="smk-inst">SMK Telkom Jakarta</div>
+                            <span class="detail" data-id="smk-detail">Nilai Rata-rata: 84.50</span>
+                        </div>
+
+                        <div class="logo-group" id="logo-smk">
+                            <div class="logo-magnetic-wrap">
+                                <img src="asset/logosmktelkom.png" alt="Logo SMK Telkom Jakarta" class="edu-logo">
+                                <div class="logo-glow"></div>
+                            </div>
+                            <span class="logo-label">SMK Telkom Jakarta</span>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -181,27 +186,27 @@
         <!-- PENGALAMAN -->
         <section id="pengalaman">
             <div class="section-header reveal">
-                <div class="section-label">career history</div>
+                <div class="section-label" data-id="exp-label">career history</div>
                 <div class="section-title title-anim-wrap">
                     <div class="title-anim-row" data-delay="0">
-                        <span class="title-block-anim">EXPERINCE</span>
+                        <span class="title-block-anim" data-id="exp-title">PENGALAMAN</span>
                     </div>
                 </div>
-                <p class="section-subtitle">Perjalanan profesional saya sejauh ini</p>
+                <p class="section-subtitle" data-id="exp-subtitle">Perjalanan profesional saya sejauh ini</p>
             </div>
             <div class="exp-list">
 
                 <div class="card exp-card reveal">
                     <div class="exp-info">
-                        <div class="section-label-mini">Admin Intern</div>
-                        <h3>Admin Intern — <span class="company">CV Sinar Yafiq Kamil Tehnik</span></h3>
+                        <div class="section-label-mini" data-id="exp1-role">Admin Intern</div>
+                        <h3><span data-id="exp1-title">Admin Intern</span> — <span class="company">CV Sinar Yafiq Kamil Tehnik</span></h3>
                         <span class="period">Jan 2026 — Mar 2026</span>
                         <div class="desc-box">
                             <ul>
-                                <li>Membuat laporan keuangan harian menggunakan Google Sheets untuk kebutuhan operasional perusahaan.</li>
-                                <li>Mengelola data pelanggan dan transaksi menggunakan Microsoft Excel untuk meningkatkan efisiensi pencatatan.</li>
-                                <li>Merancang materi promosi visual menggunakan Canva untuk mendukung kampanye pemasaran perusahaan.</li>
-                                <li>Mengembangkan Website Company Profile.</li>
+                                <li data-id="exp1-li1">Membuat laporan keuangan harian menggunakan Google Sheets untuk kebutuhan operasional perusahaan.</li>
+                                <li data-id="exp1-li2">Mengelola data pelanggan dan transaksi menggunakan Microsoft Excel untuk meningkatkan efisiensi pencatatan.</li>
+                                <li data-id="exp1-li3">Merancang materi promosi visual menggunakan Canva untuk mendukung kampanye pemasaran perusahaan.</li>
+                                <li data-id="exp1-li4">Mengembangkan Website Company Profile.</li>
                             </ul>
                         </div>
                         <div class="tools-row">
@@ -217,14 +222,14 @@
 
                 <div class="card exp-card reveal" style="transition-delay:.1s">
                     <div class="exp-info">
-                        <div class="section-label-mini">Customer Care Unit</div>
-                        <h3>Customer Care — <span class="company">PT Astro Tech Indonesia</span></h3>
+                        <div class="section-label-mini" data-id="exp2-role">Customer Care Unit</div>
+                        <h3><span data-id="exp2-title">Customer Care</span> — <span class="company">PT Astro Tech Indonesia</span></h3>
                         <span class="period">Agt 2024 — Mar 2025</span>
                         <div class="desc-box">
                             <ul>
-                                <li>Mengelola layanan live chat untuk menangani keluhan dan pertanyaan pelanggan, serta mendokumentasikan setiap interaksi secara sistematis sesuai kategori masalah.</li>
-                                <li>Bekerja sama dengan pihak pengirim (3PL) secara intensif untuk menyelesaikan kendala pengiriman dan memastikan pesanan sampai ke tangan pelanggan.</li>
-                                <li>Melakukan tindak lanjut melalui panggilan telepon untuk memberikan pembaruan masalah dan melakukan pendekatan khusus kepada pelanggan dengan ulasan negatif guna menjaga kepuasan mereka.</li>
+                                <li data-id="exp2-li1">Mengelola layanan live chat untuk menangani keluhan dan pertanyaan pelanggan, serta mendokumentasikan setiap interaksi secara sistematis sesuai kategori masalah.</li>
+                                <li data-id="exp2-li2">Bekerja sama dengan pihak pengirim (3PL) secara intensif untuk menyelesaikan kendala pengiriman dan memastikan pesanan sampai ke tangan pelanggan.</li>
+                                <li data-id="exp2-li3">Melakukan tindak lanjut melalui panggilan telepon untuk memberikan pembaruan masalah dan melakukan pendekatan khusus kepada pelanggan dengan ulasan negatif guna menjaga kepuasan mereka.</li>
                             </ul>
                         </div>
                         <div class="tools-row">
@@ -240,13 +245,13 @@
 
                 <div class="card exp-card reveal" style="transition-delay:.2s">
                     <div class="exp-info">
-                        <div class="section-label-mini">Customer Service</div>
-                        <h3>Customer Service — <span class="company">Xinchuan Telecome</span></h3>
+                        <div class="section-label-mini" data-id="exp3-role">Customer Service</div>
+                        <h3><span data-id="exp3-title">Customer Service</span> — <span class="company">Xinchuan Telecome</span></h3>
                         <span class="period">Mei 2023 — Apr 2024</span>
                         <div class="desc-box">
                             <ul>
-                                <li>Bertanggung jawab dalam menangani pertanyaan dan keluhan pelanggan secara responsif melalui berbagai platform media sosial (Line, Instagram, Facebook).</li>
-                                <li>Mengelola seluruh proses transaksi dan pesanan pelanggan secara akurat menggunakan sistem Warehouse Management System (WMS).</li>
+                                <li data-id="exp3-li1">Bertanggung jawab dalam menangani pertanyaan dan keluhan pelanggan secara responsif melalui berbagai platform media sosial (Line, Instagram, Facebook).</li>
+                                <li data-id="exp3-li2">Mengelola seluruh proses transaksi dan pesanan pelanggan secara akurat menggunakan sistem Warehouse Management System (WMS).</li>
                             </ul>
                         </div>
                         <div class="tools-row">
@@ -266,16 +271,16 @@
         <!-- PROYEK -->
         <section id="proyek">
             <div class="section-header reveal">
-                <div class="section-label">PROJECT</div>
+                <div class="section-label" data-id="proj-label">PROJECT</div>
                 <div class="section-title title-anim-wrap">
                     <div class="title-anim-row" data-delay="0">
-                        <span class="title-block-anim">PROJECT</span>
+                        <span class="title-block-anim" data-id="proj-title">PROYEK</span>
                     </div>
                 </div>
-                <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan</p>
+                <p class="section-subtitle" data-id="proj-subtitle">Beberapa proyek yang telah saya kerjakan</p>
             </div>
             <div class="project-filters reveal">
-                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn active" data-filter="all" data-id="filter-all">Semua</button>
                 <button class="filter-btn" data-filter="web">Web Dev</button>
                 <button class="filter-btn" data-filter="design">Design</button>
                 <button class="filter-btn" data-filter="data">Data</button>
@@ -283,79 +288,79 @@
             <div class="project-grid">
                 <div class="card project-card reveal" data-cat="web">
                     <div class="proj-thumb"><img src="asset/miesabi.jpeg" class="proj-thumb-img" alt="MieSabi"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Website Pemesanan MieSabi</h3>
-                    <p class="proj-desc">Platform pemesanan mie berbasis web menggunakan Laravel 10 & Bootstrap, dikerjakan dalam tim sebagai tugas Capstone.</p>
+                    <h3 data-id="proj1-title">Website Pemesanan MieSabi</h3>
+                    <p class="proj-desc" data-id="proj1-desc">Platform pemesanan mie berbasis web menggunakan Laravel 10 & Bootstrap, dikerjakan dalam tim sebagai tugas Capstone.</p>
                     <div class="proj-tech"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
                     <div class="proj-links"><a href="https://github.com/kurniawanpratama1999/miesabi-laravel10/tree/feature-noval" target="_blank" class="proj-link">GitHub →</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="web" style="transition-delay:.05s">
                     <div class="proj-thumb"><img src="asset/laundry.jpeg" class="proj-thumb-img" alt="Laundry POS"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Point of Sales Laundry</h3>
-                    <p class="proj-desc">Aplikasi POS manajemen transaksi laundry untuk tes Sertifikat Pelatihan Kerja Daerah & BNSP.</p>
+                    <h3 data-id="proj2-title">Point of Sales Laundry</h3>
+                    <p class="proj-desc" data-id="proj2-desc">Aplikasi POS manajemen transaksi laundry untuk tes Sertifikat Pelatihan Kerja Daerah & BNSP.</p>
                     <div class="proj-tech"><span>PHP Native</span><span>MySQL</span><span>Bootstrap</span></div>
                     <div class="proj-links"><a href="https://github.com/Muhammadnovalsaputra/laundry_ujikomnoval" target="_blank" class="proj-link">GitHub →</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="web" style="transition-delay:.1s">
                     <div class="proj-thumb"><img src="asset/companyprofileSyk.jpeg" class="proj-thumb-img" alt="Company Profile SYK"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Company Profile SYK</h3>
-                    <p class="proj-desc">Company Profile CV Sinar Yafiq Kamil Tehnik menggunakan Vue.js dengan halaman beranda, layanan, dan kontak.</p>
+                    <h3 data-id="proj3-title">Company Profile SYK</h3>
+                    <p class="proj-desc" data-id="proj3-desc">Company Profile CV Sinar Yafiq Kamil Tehnik menggunakan Vue.js dengan halaman beranda, layanan, dan kontak.</p>
                     <div class="proj-tech"><span>Vue.js</span></div>
                     <div class="proj-links"><a href="https://www.sinaryafiqkamiltehnik.id/" target="_blank" class="proj-link">Live Demo →</a><a href="https://github.com/Muhammadnovalsaputra/CompanyProfileSyk" target="_blank" class="proj-link-ghost">GitHub</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="web" style="transition-delay:.15s">
                     <div class="proj-thumb"><img src="asset/bookcourt.jpeg" class="proj-thumb-img" alt="Booking Lapangan"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Booking Lapangan Basket</h3>
-                    <p class="proj-desc">Platform pemesanan lapangan basket dengan Vue Router, halaman booking, profil, dan riwayat.</p>
+                    <h3 data-id="proj4-title">Booking Lapangan Basket</h3>
+                    <p class="proj-desc" data-id="proj4-desc">Platform pemesanan lapangan basket dengan Vue Router, halaman booking, profil, dan riwayat.</p>
                     <div class="proj-tech"><span>Vue.js</span></div>
                     <div class="proj-links"><a href="https://vue-ui-lanjutan2025.vercel.app/" target="_blank" class="proj-link">Live Demo →</a><a href="https://github.com/Muhammadnovalsaputra/vueUiLanjutan2025" target="_blank" class="proj-link-ghost">GitHub</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="web" style="transition-delay:.2s">
                     <div class="proj-thumb"><img src="asset/kalkulator.png" class="proj-thumb-img" alt="Kalkulator"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Kalkulator Sederhana</h3>
-                    <p class="proj-desc">Kalkulator berbasis web untuk mengasah kemampuan dasar JavaScript, HTML & CSS.</p>
+                    <h3 data-id="proj5-title">Kalkulator Sederhana</h3>
+                    <p class="proj-desc" data-id="proj5-desc">Kalkulator berbasis web untuk mengasah kemampuan dasar JavaScript, HTML & CSS.</p>
                     <div class="proj-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <div class="proj-links"><a href="https://muhammadnovalsaputra.github.io/kalkulatorsederhana/" target="_blank" class="proj-link">Live Demo →</a><a href="https://github.com/Muhammadnovalsaputra/kalkulatorsederhana" target="_blank" class="proj-link-ghost">GitHub</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="web" style="transition-delay:.25s">
                     <div class="proj-thumb"><img src="asset/project1.jpg" class="proj-thumb-img" alt="Company Profile PPKD"><span class="proj-cat">Web Dev</span></div>
-                    <h3>Company Profile PPKD</h3>
-                    <p class="proj-desc">Company profile sederhana menggunakan HTML & CSS sebagai tugas pertama PPKD Jakarta Pusat.</p>
+                    <h3 data-id="proj6-title">Company Profile PPKD</h3>
+                    <p class="proj-desc" data-id="proj6-desc">Company profile sederhana menggunakan HTML & CSS sebagai tugas pertama PPKD Jakarta Pusat.</p>
                     <div class="proj-tech"><span>HTML</span><span>CSS</span></div>
                     <div class="proj-links"><a href="https://muhammadnovalsaputra.github.io/project1PPKDJP-CompanyProfile/" target="_blank" class="proj-link">Live Demo →</a><a href="https://github.com/Muhammadnovalsaputra/project1PPKDJP-CompanyProfile" target="_blank" class="proj-link-ghost">GitHub</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="design">
                     <div class="proj-thumb"><img src="asset/design1.jpeg" class="proj-thumb-img" alt="Poster Birthday Promo"><span class="proj-cat">Design</span></div>
-                    <h3>Poster Birthday Promo</h3>
-                    <p class="proj-desc">Poster promo ulang tahun untuk kebutuhan media sosial perusahaan saat magang.</p>
+                    <h3 data-id="proj7-title">Poster Birthday Promo</h3>
+                    <p class="proj-desc" data-id="proj7-desc">Poster promo ulang tahun untuk kebutuhan media sosial perusahaan saat magang.</p>
                     <div class="proj-tech"><span>Canva</span></div>
                     <div class="proj-links"><a href="https://www.instagram.com/p/DUnDeQ1CYwa/" target="_blank" class="proj-link">Instagram →</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="design" style="transition-delay:.05s">
                     <div class="proj-thumb"><img src="asset/design2.jpeg" class="proj-thumb-img" alt="Poster Pizza"><span class="proj-cat">Design</span></div>
-                    <h3>Poster Pizza</h3>
-                    <p class="proj-desc">Studi kasus desain mandiri untuk mengembangkan skill Photoshop.</p>
+                    <h3 data-id="proj8-title">Poster Pizza</h3>
+                    <p class="proj-desc" data-id="proj8-desc">Studi kasus desain mandiri untuk mengembangkan skill Photoshop.</p>
                     <div class="proj-tech"><span>Photoshop</span></div>
                     <div class="proj-links"><a href="https://www.instagram.com/p/DO8owGHieL1/" target="_blank" class="proj-link">Instagram →</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="design" style="transition-delay:.1s">
                     <div class="proj-thumb"><img src="asset/design3.jpeg" class="proj-thumb-img" alt="Poster Indomie"><span class="proj-cat">Design</span></div>
-                    <h3>Poster Indomie Warkop</h3>
-                    <p class="proj-desc">Studi kasus desain mandiri menggunakan Photoshop dan After Effect.</p>
+                    <h3 data-id="proj9-title">Poster Indomie Warkop</h3>
+                    <p class="proj-desc" data-id="proj9-desc">Studi kasus desain mandiri menggunakan Photoshop dan After Effect.</p>
                     <div class="proj-tech"><span>Photoshop</span><span>After Effect</span></div>
                     <div class="proj-links"><a href="https://www.instagram.com/p/DO5lwI4iVP5/" target="_blank" class="proj-link">Instagram →</a></div>
                 </div>
                 <div class="card project-card reveal" data-cat="data">
                     <div class="proj-thumb"><img src="asset/data1.jpeg" class="proj-thumb-img" alt="Laporan Keuangan"><span class="proj-cat">Data</span></div>
-                    <h3>Laporan Keuangan SYK</h3>
-                    <p class="proj-desc">Laporan keuangan menggunakan Google Sheets untuk kebutuhan operasional perusahaan magang.</p>
+                    <h3 data-id="proj10-title">Laporan Keuangan SYK</h3>
+                    <p class="proj-desc" data-id="proj10-desc">Laporan keuangan menggunakan Google Sheets untuk kebutuhan operasional perusahaan magang.</p>
                     <div class="proj-tech"><span>Google Sheets</span></div>
                 </div>
                 <div class="card project-card reveal" data-cat="data" style="transition-delay:.05s">
                     <div class="proj-thumb"><img src="asset/data2.jpeg" class="proj-thumb-img" alt="Analisis Data"><span class="proj-cat">Data</span></div>
-                    <h3>Analisis Data Penjualan</h3>
-                    <p class="proj-desc">Project awal data analysis menggunakan Excel untuk menganalisis data penjualan dan visualisasi.</p>
+                    <h3 data-id="proj11-title">Analisis Data Penjualan</h3>
+                    <p class="proj-desc" data-id="proj11-desc">Project awal data analysis menggunakan Excel untuk menganalisis data penjualan dan visualisasi.</p>
                     <div class="proj-tech"><span>Microsoft Excel</span></div>
-                    <div class="proj-links"><a href="https://docs.google.com/spreadsheets/d/17ALEXOBPhs2eQ3TftVzUfVgXT8YLxZfN" target="_blank" class="proj-link">Lihat →</a></div>
+                    <div class="proj-links"><a href="https://docs.google.com/spreadsheets/d/17ALEXOBPhs2eQ3TftVzUfVgXT8YLxZfN" target="_blank" class="proj-link" data-id="proj11-link">Lihat →</a></div>
                 </div>
             </div>
         </section>
@@ -363,50 +368,53 @@
         <!-- SERTIFIKAT -->
         <section id="sertifikat">
             <div class="section-header reveal">
-                <div class="section-label"> ACHIEVEMENTS</div>
+                <div class="section-label" data-id="cert-label">ACHIEVEMENTS</div>
                 <div class="section-title title-anim-wrap">
                     <div class="title-anim-row" data-delay="0">
-                        <span class="title-block-anim">CERTIFICATE</span>
+                        <span class="title-block-anim" data-id="cert-title">SERTIFIKAT</span>
                     </div>
                 </div>
-                <p class="section-subtitle">Bukti kompetensi dan pelatihan yang telah diikuti</p>
+                <p class="section-subtitle" data-id="cert-subtitle">Bukti kompetensi dan pelatihan yang telah diikuti</p>
             </div>
             <div class="cert-grid">
                 <div class="card cert-card reveal"><div class="cert-icon"><img src="asset/Sertifikat data.png" width="100" alt="Data Analyst"></div><h4>Data Analyst</h4><div class="issuer">Special Skill</div></div>
                 <div class="card cert-card reveal" style="transition-delay:.05s"><div class="cert-icon"><img src="asset/sertifikat_oop.png" width="100" alt="OOP"></div><h4>OOP</h4><div class="issuer">MySkill</div></div>
                 <div class="card cert-card reveal" style="transition-delay:.1s"><div class="cert-icon"><img src="asset/sertifikat_aio.png" width="100" alt="Web Design"></div><h4>Web Design</h4><div class="issuer">AIO Course</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.15s"><div class="cert-icon"><img src="asset/sertikalkulator.png" width="100" alt="Project Kalkulator"></div><h4>Project Kalkulator</h4><div class="issuer">MySkill</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.2s"><div class="cert-icon"><img src="asset/sertifikat_algoritma.png" width="100" alt="Algoritma"></div><h4>Algoritma Pemrograman</h4><div class="issuer">MySkill</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.25s"><div class="cert-icon"><img src="asset/assycsertif.png" width="100" alt="Async JS"></div><h4>Asynchronous JS</h4><div class="issuer">MySkill</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.15s"><div class="cert-icon"><img src="asset/sertikalkulator.png" width="100" alt="Project Kalkulator"></div><h4 data-id="cert4-name">Project Kalkulator</h4><div class="issuer">MySkill</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.2s"><div class="cert-icon"><img src="asset/sertifikat_algoritma.png" width="100" alt="Algoritma"></div><h4 data-id="cert5-name">Algoritma Pemrograman</h4><div class="issuer">MySkill</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.25s"><div class="cert-icon"><img src="asset/assycsertif.png" width="100" alt="Async JS"></div><h4 data-id="cert6-name">Asynchronous JS</h4><div class="issuer">MySkill</div></div>
                 <div class="card cert-card reveal" style="transition-delay:.3s"><div class="cert-icon"><img src="asset/Sertifikat_datanalisi.png" width="100" alt="Data Analyst"></div><h4>Data Analyst</h4><div class="issuer">Dsrea</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.35s"><div class="cert-icon"><img src="asset/Frontendsertif.png" width="100" alt="Front End"></div><h4>Front End Web</h4><div class="issuer">CodingStudio</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/Bnsp.jpeg" width="100" alt="BNSP"></div><h4>Software Engineering</h4><div class="issuer">BNSP</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/sql1.png" width="100" alt="SQL"></div><h4>Fundamental SQL Group By and Having </h4><div class="issuer">SQL</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.35s"><div class="cert-icon"><img src="asset/Frontendsertif.png" width="100" alt="Front End"></div><h4 data-id="cert8-name">Front End Web</h4><div class="issuer">CodingStudio</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/Bnsp.jpeg" width="100" alt="BNSP"></div><h4 data-id="cert9-name">Software Engineering</h4><div class="issuer">BNSP</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/sql1.png" width="100" alt="SQL"></div><h4>Fundamental SQL Group By and Having</h4><div class="issuer">SQL</div></div>
                 <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/sql1.png" width="100" alt="SQL"></div><h4>Fundamental SQL Using INNER JOIN and UNION</h4><div class="issuer">SQL</div></div>
-                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/sql3.png" width="100" alt="SQL"></div><h4>Memanfaatkan Operator Logika di SQL </h4><div class="issuer">SQL</div></div>
+                <div class="card cert-card reveal" style="transition-delay:.4s"><div class="cert-icon"><img src="asset/sql3.png" width="100" alt="SQL"></div><h4 data-id="cert12-name">Memanfaatkan Operator Logika di SQL</h4><div class="issuer">SQL</div></div>
             </div>
 
             <div class="section-header reveal" style="margin-top:3rem">
-                <div class="section-label">TRAINING</div>
+                <div class="section-label" data-id="training-label">TRAINING</div>
                 <div class="section-title title-anim-wrap">
                     <div class="title-anim-row from-right" data-delay="0">
-                        <span class="title-block-anim">TRAINING COURSE</span>
+                        <span class="title-block-anim" data-id="training-title">TRAINING COURSE</span>
                     </div>
                 </div>
             </div>
             <div class="card-training training-card reveal">
                 <div class="training-header">
-                    <div><h3>Web Programming</h3><div class="t-inst">PPKD Jakarta Pusat</div></div>
-                    <span class="period" style="padding-top:3px; margin-top: 10px;">Oktober - Desember 2025</span>
+                    <div>
+                        <h3 data-id="training-name">Web Programming</h3>
+                        <div class="t-inst">PPKD Jakarta Pusat</div>
+                    </div>
+                    <span class="period" style="padding-top:3px; margin-top: 10px;" data-id="training-period">Oktober - Desember 2025</span>
                 </div>
                 <ul>
-                    <li>Bahasa pemrograman PHP dari Native hingga Laravel</li>
-                    <li>Dasar dan lanjut JavaScript</li>
-                    <li>Pengantar ReactJS</li>
-                    <li>Database SQL</li>
-                    <li>Membuat aplikasi Point Of Sales (POS)</li>
-                    <li>Membuat aplikasi Company Profile (Statis & Dinamis)</li>
-                    <li>Membuat Portfolio</li>
+                    <li data-id="training-li1">Bahasa pemrograman PHP dari Native hingga Laravel</li>
+                    <li data-id="training-li2">Dasar dan lanjut JavaScript</li>
+                    <li data-id="training-li3">Pengantar ReactJS</li>
+                    <li data-id="training-li4">Database SQL</li>
+                    <li data-id="training-li5">Membuat aplikasi Point Of Sales (POS)</li>
+                    <li data-id="training-li6">Membuat aplikasi Company Profile (Statis & Dinamis)</li>
+                    <li data-id="training-li7">Membuat Portfolio</li>
                 </ul>
             </div>
         </section>
@@ -414,24 +422,24 @@
         <!-- SKILLS -->
         <section id="skills">
             <div class="section-header reveal">
-                <div class="section-label">Expertise</div>
+                <div class="section-label" data-id="skills-label">Expertise</div>
                 <div class="section-title title-anim-wrap">
                     <div class="title-anim-row" data-delay="0">
-                        <span class="title-block-anim">Skills & Tools</span>
+                        <span class="title-block-anim" data-id="skills-title">Skills & Tools</span>
                     </div>
                 </div>
             </div>
             <div class="skills-wrapper reveal">
                 <div class="skills-grid">
                     <ul class="skill-column">
-                        <li>Web Development</li>
-                        <li>Microsoft Excel</li>
-                        <li>QA Testing & SQL</li>
+                        <li data-id="skill1">Web Development</li>
+                        <li data-id="skill2">Microsoft Excel</li>
+                        <li data-id="skill3">QA Testing & SQL</li>
                     </ul>
                     <ul class="skill-column">
-                        <li>Mudah Belajar Hal Baru</li>
-                        <li>Kerja Sama Tim</li>
-                        <li>Komunikasi Efektif</li>
+                        <li data-id="skill4">Mudah Belajar Hal Baru</li>
+                        <li data-id="skill5">Kerja Sama Tim</li>
+                        <li data-id="skill6">Komunikasi Efektif</li>
                     </ul>
                 </div>
                 <div class="tools-grid-display">
@@ -455,9 +463,9 @@
 
         <!-- KONTAK -->
         <section id="kontak" class="contact-section-wrap">
-            <div class="contact-top-label">· get in touch ·</div>
+            <div class="contact-top-label" data-id="contact-top-label">· get in touch ·</div>
             <div class="contact-hero-wrap">
-                <span class="contact-hero-text">let's connect</span>
+                <span class="contact-hero-text" data-id="contact-hero">let's connect</span>
                 <div class="contact-smiley">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/>
@@ -498,7 +506,7 @@
                 </div>
                 <div class="contact-footer-right">
                     <div class="contact-brand">M.NOVAL</div>
-                    <div class="contact-tagline">open to collaborate</div>
+                    <div class="contact-tagline" data-id="contact-tagline">open to collaborate</div>
                 </div>
             </div>
         </section>
@@ -510,7 +518,345 @@
     </footer>
 
     <script>
-    /* CURSOR */
+    /* ============================================================
+       LANGUAGE SYSTEM
+       Semua teks konten dalam dua bahasa (ID & EN)
+       Cara kerja: setiap elemen punya data-id, lalu dicari di
+       objek translations[lang] dan di-update teksnya.
+    ============================================================ */
+
+    const translations = {
+        id: {
+            /* NAVBAR */
+            'badge-open'      : 'Open to Work',
+            'btn-cv'          : 'Download CV',
+            'nav-home'        : 'Home',
+            'nav-home-m'      : 'Home',
+            'nav-edu'         : 'Pendidikan',
+            'nav-edu-m'       : 'Pendidikan',
+            'nav-exp'         : 'Pengalaman',
+            'nav-exp-m'       : 'Pengalaman',
+            'nav-proj'        : 'Proyek',
+            'nav-proj-m'      : 'Proyek',
+            'nav-cert'        : 'Sertifikat',
+            'nav-cert-m'      : 'Sertifikat',
+            'nav-contact'     : 'Kontak',
+            'nav-contact-m'   : 'Kontak',
+
+            /* HOME */
+            'hero-greeting'   : '👋 &nbsp;Halo, Selamat Datang',
+            'hero-tagline'    : 'Junior Programmer dengan semangat tinggi dalam Web Development dan Data Analysis. Memiliki keahlian dalam pemecahan masalah, Microsoft Office, dan pengembangan Web.',
+            'btn-contact'     : 'Hubungi Saya →',
+            'stat-gpa'        : 'IPK Saat Ini',
+            'stat-proj'       : 'Proyek Selesai',
+            'stat-exp'        : 'Pengalaman Kerja',
+            'stat-cert'       : 'Sertifikat',
+
+            /* PENDIDIKAN */
+            'edu-label'       : 'Latar Belakang',
+            'edu-title'       : 'PENDIDIKAN',
+            'edu-subtitle'    : 'Riwayat pendidikan',
+            'telkom-year'     : '2022 — Sekarang',
+            'telkom-major'    : 'S1 Sistem Informasi',
+            'telkom-inst'     : 'Telkom University Jakarta',
+            'telkom-detail'   : 'IPK: 3.30 · Web Development',
+            'telkom-photo-label': 'Seminar Proposal',
+            'smk-major'       : 'Rekayasa Perangkat Lunak',
+            'smk-inst'        : 'SMK Telkom Jakarta',
+            'smk-detail'      : 'Nilai Rata-rata: 84.50',
+            'smk-photo-label' : 'Wisuda SMK Telkom',
+
+            /* PENGALAMAN */
+            'exp-label'       : 'career history',
+            'exp-title'       : 'PENGALAMAN',
+            'exp-subtitle'    : 'Perjalanan profesional saya sejauh ini',
+            'exp1-role'       : 'Admin Intern',
+            'exp1-title'      : 'Admin Intern',
+            'exp1-li1'        : 'Membuat laporan keuangan harian menggunakan Google Sheets untuk kebutuhan operasional perusahaan.',
+            'exp1-li2'        : 'Mengelola data pelanggan dan transaksi menggunakan Microsoft Excel untuk meningkatkan efisiensi pencatatan.',
+            'exp1-li3'        : 'Merancang materi promosi visual menggunakan Canva untuk mendukung kampanye pemasaran perusahaan.',
+            'exp1-li4'        : 'Mengembangkan Website Company Profile.',
+            'exp2-role'       : 'Customer Care Unit',
+            'exp2-title'      : 'Customer Care',
+            'exp2-li1'        : 'Mengelola layanan live chat untuk menangani keluhan dan pertanyaan pelanggan, serta mendokumentasikan setiap interaksi secara sistematis sesuai kategori masalah.',
+            'exp2-li2'        : 'Bekerja sama dengan pihak pengirim (3PL) secara intensif untuk menyelesaikan kendala pengiriman dan memastikan pesanan sampai ke tangan pelanggan.',
+            'exp2-li3'        : 'Melakukan tindak lanjut melalui panggilan telepon untuk memberikan pembaruan masalah dan melakukan pendekatan khusus kepada pelanggan dengan ulasan negatif guna menjaga kepuasan mereka.',
+            'exp3-role'       : 'Customer Service',
+            'exp3-title'      : 'Customer Service',
+            'exp3-li1'        : 'Bertanggung jawab dalam menangani pertanyaan dan keluhan pelanggan secara responsif melalui berbagai platform media sosial (Line, Instagram, Facebook).',
+            'exp3-li2'        : 'Mengelola seluruh proses transaksi dan pesanan pelanggan secara akurat menggunakan sistem Warehouse Management System (WMS).',
+
+            /* PROYEK */
+            'proj-label'      : 'PROJECT',
+            'proj-title'      : 'PROYEK',
+            'proj-subtitle'   : 'Beberapa proyek yang telah saya kerjakan',
+            'filter-all'      : 'Semua',
+            'proj1-title'     : 'Website Pemesanan MieSabi',
+            'proj1-desc'      : 'Platform pemesanan mie berbasis web menggunakan Laravel 10 & Bootstrap, dikerjakan dalam tim sebagai tugas Capstone.',
+            'proj2-title'     : 'Point of Sales Laundry',
+            'proj2-desc'      : 'Aplikasi POS manajemen transaksi laundry untuk tes Sertifikat Pelatihan Kerja Daerah & BNSP.',
+            'proj3-title'     : 'Company Profile SYK',
+            'proj3-desc'      : 'Company Profile CV Sinar Yafiq Kamil Tehnik menggunakan Vue.js dengan halaman beranda, layanan, dan kontak.',
+            'proj4-title'     : 'Booking Lapangan Basket',
+            'proj4-desc'      : 'Platform pemesanan lapangan basket dengan Vue Router, halaman booking, profil, dan riwayat.',
+            'proj5-title'     : 'Kalkulator Sederhana',
+            'proj5-desc'      : 'Kalkulator berbasis web untuk mengasah kemampuan dasar JavaScript, HTML & CSS.',
+            'proj6-title'     : 'Company Profile PPKD',
+            'proj6-desc'      : 'Company profile sederhana menggunakan HTML & CSS sebagai tugas pertama PPKD Jakarta Pusat.',
+            'proj7-title'     : 'Poster Birthday Promo',
+            'proj7-desc'      : 'Poster promo ulang tahun untuk kebutuhan media sosial perusahaan saat magang.',
+            'proj8-title'     : 'Poster Pizza',
+            'proj8-desc'      : 'Studi kasus desain mandiri untuk mengembangkan skill Photoshop.',
+            'proj9-title'     : 'Poster Indomie Warkop',
+            'proj9-desc'      : 'Studi kasus desain mandiri menggunakan Photoshop dan After Effect.',
+            'proj10-title'    : 'Laporan Keuangan SYK',
+            'proj10-desc'     : 'Laporan keuangan menggunakan Google Sheets untuk kebutuhan operasional perusahaan magang.',
+            'proj11-title'    : 'Analisis Data Penjualan',
+            'proj11-desc'     : 'Project awal data analysis menggunakan Excel untuk menganalisis data penjualan dan visualisasi.',
+            'proj11-link'     : 'Lihat →',
+
+            /* SERTIFIKAT */
+            'cert-label'      : 'ACHIEVEMENTS',
+            'cert-title'      : 'SERTIFIKAT',
+            'cert-subtitle'   : 'Bukti kompetensi dan pelatihan yang telah diikuti',
+            'cert4-name'      : 'Project Kalkulator',
+            'cert5-name'      : 'Algoritma Pemrograman',
+            'cert6-name'      : 'Asynchronous JS',
+            'cert8-name'      : 'Front End Web',
+            'cert9-name'      : 'Software Engineering',
+            'cert12-name'     : 'Memanfaatkan Operator Logika di SQL',
+            'training-label'  : 'TRAINING',
+            'training-title'  : 'TRAINING COURSE',
+            'training-name'   : 'Web Programming',
+            'training-period' : 'Oktober - Desember 2025',
+            'training-li1'    : 'Bahasa pemrograman PHP dari Native hingga Laravel',
+            'training-li2'    : 'Dasar dan lanjut JavaScript',
+            'training-li3'    : 'Pengantar ReactJS',
+            'training-li4'    : 'Database SQL',
+            'training-li5'    : 'Membuat aplikasi Point Of Sales (POS)',
+            'training-li6'    : 'Membuat aplikasi Company Profile (Statis & Dinamis)',
+            'training-li7'    : 'Membuat Portfolio',
+
+            /* SKILLS */
+            'skills-label'    : 'Keahlian',
+            'skills-title'    : 'Skills & Tools',
+            'skill1'          : 'Web Development',
+            'skill2'          : 'Microsoft Excel',
+            'skill3'          : 'QA Testing & SQL',
+            'skill4'          : 'Mudah Belajar Hal Baru',
+            'skill5'          : 'Kerja Sama Tim',
+            'skill6'          : 'Komunikasi Efektif',
+
+            /* KONTAK */
+            'contact-top-label': '· hubungi saya ·',
+            'contact-hero'    : 'mari terhubung',
+            'contact-tagline' : 'terbuka untuk kolaborasi',
+        },
+
+        en: {
+            /* NAVBAR */
+            'badge-open'      : 'Open to Work',
+            'btn-cv'          : 'Download CV',
+            'nav-home'        : 'Home',
+            'nav-home-m'      : 'Home',
+            'nav-edu'         : 'Education',
+            'nav-edu-m'       : 'Education',
+            'nav-exp'         : 'Experience',
+            'nav-exp-m'       : 'Experience',
+            'nav-proj'        : 'Projects',
+            'nav-proj-m'      : 'Projects',
+            'nav-cert'        : 'Certificates',
+            'nav-cert-m'      : 'Certificates',
+            'nav-contact'     : 'Contact',
+            'nav-contact-m'   : 'Contact',
+
+            /* HOME */
+            'hero-greeting'   : '👋 &nbsp;Hello, Welcome',
+            'hero-tagline'    : 'Junior Programmer with a strong passion for Web Development and Data Analysis. Skilled in problem-solving, Microsoft Office, and web development.',
+            'btn-contact'     : 'Contact Me →',
+            'stat-gpa'        : 'Current GPA',
+            'stat-proj'       : 'Projects Done',
+            'stat-exp'        : 'Work Experience',
+            'stat-cert'       : 'Certificates',
+
+            /* EDUCATION */
+            'edu-label'       : 'Background',
+            'edu-title'       : 'EDUCATION',
+            'edu-subtitle'    : 'Educational background',
+            'telkom-year'     : '2022 — Present',
+            'telkom-major'    : 'Bachelor of Information Systems',
+            'telkom-inst'     : 'Telkom University Jakarta',
+            'telkom-detail'   : 'GPA: 3.30 · Web Development',
+            'telkom-photo-label': 'Proposal Seminar',
+            'smk-major'       : 'Software Engineering',
+            'smk-inst'        : 'SMK Telkom Jakarta',
+            'smk-detail'      : 'Average Score: 84.50',
+            'smk-photo-label' : 'SMK Telkom Graduation',
+
+            /* EXPERIENCE */
+            'exp-label'       : 'career history',
+            'exp-title'       : 'EXPERIENCE',
+            'exp-subtitle'    : 'My professional journey so far',
+            'exp1-role'       : 'Admin Intern',
+            'exp1-title'      : 'Admin Intern',
+            'exp1-li1'        : 'Created daily financial reports using Google Sheets to support company operational needs.',
+            'exp1-li2'        : 'Managed customer data and transactions using Microsoft Excel to improve recording efficiency.',
+            'exp1-li3'        : 'Designed visual promotional materials using Canva to support company marketing campaigns.',
+            'exp1-li4'        : 'Developed a Company Profile Website.',
+            'exp2-role'       : 'Customer Care Unit',
+            'exp2-title'      : 'Customer Care',
+            'exp2-li1'        : 'Managed live chat services to handle customer complaints and inquiries, systematically documenting each interaction by issue category.',
+            'exp2-li2'        : 'Collaborated intensively with third-party logistics (3PL) to resolve delivery issues and ensure orders reached customers.',
+            'exp2-li3'        : 'Followed up via phone calls to provide issue updates and made personalized approaches to customers with negative reviews to maintain their satisfaction.',
+            'exp3-role'       : 'Customer Service',
+            'exp3-title'      : 'Customer Service',
+            'exp3-li1'        : 'Responsible for responsively handling customer questions and complaints across various social media platforms (Line, Instagram, Facebook).',
+            'exp3-li2'        : 'Managed all customer transaction and order processes accurately using a Warehouse Management System (WMS).',
+
+            /* PROJECTS */
+            'proj-label'      : 'PROJECT',
+            'proj-title'      : 'PROJECTS',
+            'proj-subtitle'   : 'Some projects I have worked on',
+            'filter-all'      : 'All',
+            'proj1-title'     : 'MieSabi Ordering Website',
+            'proj1-desc'      : 'A web-based noodle ordering platform using Laravel 10 & Bootstrap, built as a team Capstone assignment.',
+            'proj2-title'     : 'Laundry Point of Sales',
+            'proj2-desc'      : 'A POS app for laundry transaction management, built for the Regional Work Training Certificate & BNSP exam.',
+            'proj3-title'     : 'SYK Company Profile',
+            'proj3-desc'      : 'Company Profile for CV Sinar Yafiq Kamil Tehnik using Vue.js with home, services, and contact pages.',
+            'proj4-title'     : 'Basketball Court Booking',
+            'proj4-desc'      : 'A basketball court booking platform with Vue Router, booking, profile, and history pages.',
+            'proj5-title'     : 'Simple Calculator',
+            'proj5-desc'      : 'A web-based calculator to sharpen fundamental JavaScript, HTML & CSS skills.',
+            'proj6-title'     : 'PPKD Company Profile',
+            'proj6-desc'      : 'A simple company profile using HTML & CSS as the first assignment at PPKD Jakarta Pusat.',
+            'proj7-title'     : 'Birthday Promo Poster',
+            'proj7-desc'      : 'A birthday promo poster created for the company\'s social media needs during internship.',
+            'proj8-title'     : 'Pizza Poster',
+            'proj8-desc'      : 'An independent design case study to develop Photoshop skills.',
+            'proj9-title'     : 'Indomie Warkop Poster',
+            'proj9-desc'      : 'An independent design case study using Photoshop and After Effect.',
+            'proj10-title'    : 'SYK Financial Report',
+            'proj10-desc'     : 'Financial report using Google Sheets for internship company operational needs.',
+            'proj11-title'    : 'Sales Data Analysis',
+            'proj11-desc'     : 'A beginner data analysis project using Excel to analyze sales data and create visualizations.',
+            'proj11-link'     : 'View →',
+
+            /* CERTIFICATES */
+            'cert-label'      : 'ACHIEVEMENTS',
+            'cert-title'      : 'CERTIFICATES',
+            'cert-subtitle'   : 'Proof of competency and training attended',
+            'cert4-name'      : 'Calculator Project',
+            'cert5-name'      : 'Programming Algorithm',
+            'cert6-name'      : 'Asynchronous JS',
+            'cert8-name'      : 'Front End Web',
+            'cert9-name'      : 'Software Engineering',
+            'cert12-name'     : 'Using Logical Operators in SQL',
+            'training-label'  : 'TRAINING',
+            'training-title'  : 'TRAINING COURSE',
+            'training-name'   : 'Web Programming',
+            'training-period' : 'October - December 2025',
+            'training-li1'    : 'PHP programming language from Native to Laravel',
+            'training-li2'    : 'Basic and advanced JavaScript',
+            'training-li3'    : 'Introduction to ReactJS',
+            'training-li4'    : 'SQL Database',
+            'training-li5'    : 'Building a Point of Sales (POS) application',
+            'training-li6'    : 'Building a Company Profile application (Static & Dynamic)',
+            'training-li7'    : 'Building a Portfolio',
+
+            /* SKILLS */
+            'skills-label'    : 'Expertise',
+            'skills-title'    : 'Skills & Tools',
+            'skill1'          : 'Web Development',
+            'skill2'          : 'Microsoft Excel',
+            'skill3'          : 'QA Testing & SQL',
+            'skill4'          : 'Fast Learner',
+            'skill5'          : 'Teamwork',
+            'skill6'          : 'Effective Communication',
+
+            /* CONTACT */
+            'contact-top-label': '· get in touch ·',
+            'contact-hero'    : 'let\'s connect',
+            'contact-tagline' : 'open to collaborate',
+        }
+    };
+
+    /* ── localStorage fallback (Edge Tracking Prevention safe) ── */
+    let currentLang = 'id';
+    try { currentLang = localStorage.getItem('portfolioLang') || 'id'; } catch(e) {}
+
+    /* ID typewriter agar bisa di-cancel saat ganti bahasa */
+    let typewriterTimer = null;
+
+    function setLang(lang) {
+        if (lang === currentLang) return;
+        currentLang = lang;
+        try { localStorage.setItem('portfolioLang', lang); } catch(e) {}
+
+        /* Update tombol aktif */
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        /* Update atribut lang di <html> */
+        document.documentElement.lang = lang;
+
+        /* Update semua elemen KECUALI typewriter (ditangani sendiri) */
+        applyTranslations(lang);
+
+        /* Re-run typewriter setelah teks lain selesai diupdate */
+        restartTypewriter();
+    }
+
+    function applyTranslations(lang) {
+        const t = translations[lang];
+        document.querySelectorAll('[data-id]').forEach(el => {
+            const key = el.getAttribute('data-id');
+            /* Lewati elemen typewriter — dihandle oleh restartTypewriter() */
+            if (key === 'hero-tagline') return;
+            if (t[key] !== undefined) {
+                el.innerHTML = t[key];
+            }
+        });
+    }
+
+    function restartTypewriter() {
+        /* Batalkan typewriter yang sedang berjalan */
+        if (typewriterTimer) { clearTimeout(typewriterTimer); typewriterTimer = null; }
+
+        const el = document.getElementById('typewriter');
+        if (!el) return;
+
+        const text = translations[currentLang]['hero-tagline'];
+        el.textContent = '';
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                typewriterTimer = setTimeout(type, 38);
+            } else {
+                typewriterTimer = null;
+            }
+        }
+        typewriterTimer = setTimeout(type, 100);
+    }
+
+    /* Inisialisasi saat halaman load */
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === currentLang);
+        });
+        document.documentElement.lang = currentLang;
+        applyTranslations(currentLang);
+        /* Typewriter dijalankan terpisah dengan delay awal */
+        setTimeout(restartTypewriter, 800);
+    });
+
+    /* ============================================================
+       CURSOR
+    ============================================================ */
     const cursor = document.getElementById('cursor');
     const ring   = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
@@ -527,7 +873,9 @@
         requestAnimationFrame(animRing);
     })();
 
-    /* PARTICLES */
+    /* ============================================================
+       PARTICLES
+    ============================================================ */
     const cvs = document.getElementById('particleCanvas');
     const ctx = cvs.getContext('2d');
     function resizeCvs() { cvs.width = innerWidth; cvs.height = innerHeight; }
@@ -557,7 +905,9 @@
         requestAnimationFrame(draw);
     })();
 
-    /* HAMBURGER */
+    /* ============================================================
+       HAMBURGER
+    ============================================================ */
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
@@ -565,8 +915,10 @@
         a.addEventListener('click', () => mobileMenu.classList.remove('open'))
     );
 
-    /* ACTIVE NAV ON SCROLL */
-    const sections = document.querySelectorAll('section[id]');
+    /* ============================================================
+       ACTIVE NAV ON SCROLL
+    ============================================================ */
+    const sections   = document.querySelectorAll('section[id]');
     const navAnchors = document.querySelectorAll('.nav-anchor');
     function setActive() {
         let cur = '';
@@ -578,7 +930,9 @@
     }
     window.addEventListener('scroll', setActive, { passive: true });
 
-    /* SCROLL REVEAL */
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
@@ -586,7 +940,9 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    /* PROJECT FILTER */
+    /* ============================================================
+       PROJECT FILTER
+    ============================================================ */
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -598,7 +954,9 @@
         });
     });
 
-    /* SCROLL REVEAL (fallback) */
+    /* ============================================================
+       SCROLL REVEAL FALLBACK
+    ============================================================ */
     function reveal() {
         document.querySelectorAll('.reveal').forEach(el => {
             const top = el.getBoundingClientRect().top;
@@ -608,7 +966,9 @@
     window.addEventListener('scroll', reveal);
     reveal();
 
-    /* TITLE SLIDE-IN ANIMATION */
+    /* ============================================================
+       TITLE SLIDE-IN ANIMATION
+    ============================================================ */
     const titleObs = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -620,53 +980,27 @@
     }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.title-anim-row').forEach(r => titleObs.observe(r));
 
-    window.addEventListener('scroll', () => {
-        const astronaut = document.getElementById('astronaut');
-        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        const posX = 10 + (scrollPercent * 70); 
-        const posY = 20 + (scrollPercent * 50);
-
-        astronaut.style.left = posX + '%';
-        astronaut.style.top = posY + '%';
-        
-        astronaut.style.transform = `rotate(${scrollPercent * 360}deg)`;
-    });
-
-    const text = document.getElementById('typewriter');
-    const strText = text.textContent;
-    text.textContent = "";
-    let i = 0;
-
-    function type() {
-        if (i < strText.length) {
-            text.textContent += strText.charAt(i);
-            i++;
-            setTimeout(type, 50); 
-        }
-    }
-    
-   
-    setTimeout(type, 800);
-
+ 
+    /* ============================================================
+       MAGNETIC LOGO EFFECT
+    ============================================================ */
     document.querySelectorAll('.logo-magnetic-wrap').forEach(wrap => {
-    wrap.addEventListener('mousemove', (e) => {
-        const rect = wrap.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = (e.clientX - cx) * 0.35;
-        const dy = (e.clientY - cy) * 0.35;
-        wrap.style.transform = `translate(${dx}px, ${dy}px) scale(1.08)`;
-        const logo = wrap.querySelector('.edu-logo');
-        logo.style.transform = `translate(${dx * 0.5}px, ${dy * 0.5}px)`;
+        wrap.addEventListener('mousemove', (e) => {
+            const rect = wrap.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top  + rect.height / 2;
+            const dx = (e.clientX - cx) * 0.35;
+            const dy = (e.clientY - cy) * 0.35;
+            wrap.style.transform = `translate(${dx}px, ${dy}px) scale(1.08)`;
+            const logo = wrap.querySelector('.edu-logo');
+            logo.style.transform = `translate(${dx * 0.5}px, ${dy * 0.5}px)`;
+        });
+        wrap.addEventListener('mouseleave', () => {
+            wrap.style.transform = 'translate(0,0) scale(1)';
+            const logo = wrap.querySelector('.edu-logo');
+            logo.style.transform = 'translate(0,0)';
+        });
     });
-
-    wrap.addEventListener('mouseleave', () => {
-        wrap.style.transform = 'translate(0,0) scale(1)';
-        const logo = wrap.querySelector('.edu-logo');
-        logo.style.transform = 'translate(0,0)';
-    });
-    });
-
     </script>
 
 </body>
