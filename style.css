@@ -772,7 +772,15 @@ footer { text-align:center; padding:2.5rem 2rem; border-top:1px solid var(--bord
 }
 
 @media (max-width: 480px) {
-    .btn-primary-sm { display: none; }
+    .btn-primary-sm { 
+        display: inline-flex;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    .btn-primary-sm svg {
+        width: 12px;
+        height: 12px;
+    }
     .lang-toggle-wrap { margin-right: 0.5rem; }
 }
 
@@ -811,6 +819,57 @@ footer { text-align:center; padding:2.5rem 2rem; border-top:1px solid var(--bord
     .logo-group { display: none; }
     .hero-tagline { font-size: 0.9rem; }
     .lang-toggle { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+        .nav-actions {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+    .navbar-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    /* Nav-brand (logo + open to work) tetap di kiri */
+    .nav-brand {
+        order: 1;
+        flex: 1;
+    }
+    
+    /* Language toggle */
+    .lang-toggle-wrap {
+        order: 2;
+        margin-left: 0;
+        margin-right: 0.5rem;
+    }
+    
+    /* Hamburger menu */
+    .hamburger {
+        order: 3;
+    }
+    
+    /* Nav-actions (Download CV) - pindah ke baris baru di bawah open to work */
+    .nav-actions {
+        order: 4;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        padding-left: 0.5rem;
+    }
+    
+    .btn-primary-sm {
+        width: auto;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
 }
 @media (max-width: 480px) {
     .hero-title { font-size:3.2rem; }
