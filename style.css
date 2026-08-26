@@ -604,13 +604,45 @@ section:not(:last-child)::after {
 .proj-link { font-size:0.73rem; color:var(--accent); text-decoration:none; font-weight:700; }
 
 /* ===== CERTIFICATES ===== */
-.cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1.2rem; margin-bottom:3rem; }
+.cert-grid { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); 
+    gap:1.5rem; 
+    margin-bottom:3rem; 
+}
 .cert-card { text-align:center; }
-.cert-icon { width:52px; height:52px; background:rgba(240,180,41,0.1); border:1px solid rgba(240,180,41,0.22); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 0.8rem; transition:all 0.3s; }
-.cert-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
-.cert-card:hover .cert-icon { background:rgba(240,180,41,0.2); transform:scale(1.1); }
-.cert-card h4 { font-size:0.82rem; font-weight:700; margin-bottom:0.25rem; }
-.cert-card .issuer { color:var(--accent); font-size:0.7rem; font-weight:600; }
+.cert-icon { 
+    width:100%; 
+    max-width:220px;
+    height:150px; 
+    background:rgba(240,180,41,0.05); 
+    border:1px solid rgba(240,180,41,0.22); 
+    border-radius:12px; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    margin:0 auto 1rem; 
+    overflow:hidden;
+    transition:all 0.3s; 
+}
+.cert-icon img { 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    object-position:top;
+    border-radius:11px; 
+    transition:transform 0.4s ease;
+}
+.cert-card:hover .cert-icon { 
+    background:rgba(240,180,41,0.15); 
+    border-color:rgba(240,180,41,0.4);
+    box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+.cert-card:hover .cert-icon img {
+    transform:scale(1.08);
+}
+.cert-card h4 { font-size:0.88rem; font-weight:700; margin-bottom:0.25rem; }
+.cert-card .issuer { color:var(--accent); font-size:0.72rem; font-weight:600; }
 
 /* ===== TRAINING ===== */
 .card-training {
@@ -880,4 +912,9 @@ footer { text-align:center; padding:2.5rem 2rem; border-top:1px solid var(--bord
 }
 @media (pointer: coarse) { 
     .cursor, .cursor-ring { display:none; } 
+}
+
+@media (max-width: 480px) {
+    .cert-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:1rem; }
+    .cert-icon { height:120px; }
 }
